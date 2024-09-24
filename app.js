@@ -83,7 +83,7 @@ Exercise 7: Using the `slice()` method
 Complete Exercise 7 in the space below:
 */
 
-const yummy = foods.splice(1, 2, "sushi", "cupcake");
+const yummy = foods.slice(1, 3);
 console.log("Exercise 7 result:", yummy);
 
 /*
@@ -211,8 +211,9 @@ const numArrays = [
   [7, 81, 90],
 ];
 
-const numList = numArrays[numArrays.length - 1];
+//const numList = numArrays[numArrays.length - 1]; this works. refine code to use numsArrays.at(-1)
 
+let numList = numArrays.at(-1);
 console.log("Exercise 13 result:", numList);
 
 /*
@@ -245,9 +246,15 @@ Complete Exercise 15 in the space below:
 
 let total = 0;
 
-for (let i = 0; i < numArrays.length; i++) {
-  for (let j = 0; j < numArrays[i].length; j++) {
-    total += numArrays[i][j];
+// for (let i = 0; i < numArrays.length; i++) {
+//   for (let j = 0; j < numArrays[i].length; j++) {
+//     total += numArrays[i][j];
+//   }
+// }
+
+for (const numArray of numArrays) {
+  for (const num of numArray) {
+    total += num;
   }
 }
 
